@@ -12,7 +12,6 @@ function App() {
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
   let [on, setOn] = useState<boolean>(false);
   return (
-   
 
     <div className="App">
       <Rating 
@@ -20,7 +19,7 @@ function App() {
         onClick={setRatingValue} 
       />
 
-      <UncontrolRaiting  />
+      <UncontrolRaiting  onChange={()=>{}}/>
 
       <Accordion 
         titleValue={'Menu'} 
@@ -34,7 +33,7 @@ function App() {
           onChange={setOn}
         />
 
-        <UncontrolOnOff />
+        <UncontrolOnOff onChange={()=>{}}/>
     </div>
   );
 }

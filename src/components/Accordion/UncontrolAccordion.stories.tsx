@@ -6,7 +6,7 @@ export default {
 };
 
 export const UncontrolAccordionMode = () =>{
-    return   <UncontrolAccordion/>
+    return   <UncontrolAccordion />
 }
 
 
