@@ -7,13 +7,16 @@ export default {
     component: Accordion
 };
 
-const OpenedAccordionHandler = action('onChange'); 
+const OpenedAccordionHandler = action('onChange');
+const onClickCallback = action('some item was clicked');  
 
 export const CollapsedAccordion = () =>{
     return   <Accordion 
                 titleValue={'Menu Closed'} 
                 collapsed={true} 
                 onChange={OpenedAccordionHandler}
+                items={[]}
+                onClick={onClickCallback}
   />
 }
 
@@ -22,6 +25,11 @@ export const OpenedAccordion = () =>{
                 titleValue={'Menu Opened'} 
                 collapsed={false} 
                 onChange={OpenedAccordionHandler}
+                items={[{title:'Dimych', value: 1}, 
+                        {title: 'Andrew', value: 2}, 
+                        {title: 'Vlad', value: 3}, 
+                        {title: 'Hanna', value: 4}]}
+                onClick={onClickCallback}
   />
 }
 
@@ -31,6 +39,11 @@ export const AccordionChange = () =>{
                 titleValue={'Menu'} 
                 collapsed={collapsed} 
                 onChange={() => {setCollapsed(!collapsed)}}
+                items={[{title:'Dimych', value: 1}, 
+                        {title: 'Andrew', value: 2}, 
+                        {title: 'Vlad', value: 3}, 
+                        {title: 'Hanna', value: 4}]}
+                onClick={onClickCallback}
   />
 }
 

@@ -6,6 +6,7 @@ import { Rating, RatingValueType } from './components/Rating/Rating';
 import { UncontrolRaiting } from './components/UncontrolRating/UncontrolRating';
 import { OnOff } from './components/OnOff/OnOff';
 import { UncontrolOnOff } from './components/OnOff/UncontrolOnOff';
+import { Select } from './components/Select/Select';
 
 function App() {
   let [raitingValue, setRatingValue] = useState<RatingValueType>(4);
@@ -18,22 +19,26 @@ function App() {
         value={raitingValue} 
         onClick={setRatingValue} 
       />
-
       <UncontrolRaiting  onChange={()=>{}}/>
 
       <Accordion 
         titleValue={'Menu'} 
         collapsed={accordionCollapsed} 
         onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}
+        items={[]}
+        onClick={()=>{}}
       />
       <UncontrolAccordion />
 
-        <OnOff 
-          on={on} 
-          onChange={setOn}
-        />
+      <OnOff 
+        on={on} 
+        onChange={setOn}
+      />
+      <UncontrolOnOff onChange={()=>{}}/>
 
-        <UncontrolOnOff onChange={()=>{}}/>
+      <Select value={'Hi'} onChange={()=>{}} items={[ {title: 'Minsk', value: 1},
+                                                    {title: 'Kiev', value: 2},
+                                                    {title: 'USA', value: 3} ]}/>
     </div>
   );
 }
