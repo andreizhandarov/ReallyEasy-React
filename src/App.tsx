@@ -35,10 +35,6 @@ function App() {
         onChange={setOn}
       />
       <UncontrolOnOff onChange={()=>{}}/>
-
-      <Select value={'Hi'} onChange={()=>{}} items={[ {title: 'Minsk', value: 1},
-                                                    {title: 'Kiev', value: 2},
-                                                    {title: 'USA', value: 3} ]}/>
     </div>
   );
 }
