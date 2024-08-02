@@ -25,7 +25,11 @@ function App() {
         titleValue={'Menu'} 
         collapsed={accordionCollapsed} 
         onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}
-        items={[]}
+        items={[{title:'Dimych', value: 1}, 
+                {title: 'Andrew', value: 2}, 
+                {title: 'Vlad', value: 3}, 
+                {title: 'Hanna', value: 4}
+              ]}
         onClick={()=>{}}
       />
       <UncontrolAccordion />
