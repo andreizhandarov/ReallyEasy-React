@@ -1,3 +1,4 @@
+import { time } from "console"
 import React, { useCallback, useEffect } from "react"
 import { useMemo, useState } from "react"
 
@@ -47,7 +48,7 @@ export const SetTimeoutExample = () => {
     // }, 1000);
 
 
-
+//----------------------------------
     useEffect(() => { 
         
         // setTimeout(() => {
@@ -55,7 +56,7 @@ export const SetTimeoutExample = () => {
         //     document.title = counter.toString();
         // }, 1000);
 
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             let d = new Date();
             let s = d.getSeconds();
             let m = d.getMinutes();
@@ -63,6 +64,7 @@ export const SetTimeoutExample = () => {
             let timer = ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
             return setCounter (timer);
         }, 1000);
+        return () => {clearInterval(intervalId)}
     },[])
 
     return <>
@@ -70,6 +72,7 @@ export const SetTimeoutExample = () => {
         <button onClick={() => {setFake(fake + 1)}}>fake +</button><br/> */}
         Hello counter: {counter}<br/>
         Hello fake: {fake}
+
         
     </>
 }
