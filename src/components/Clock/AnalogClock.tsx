@@ -1,17 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { ClockViewPropsType } from './Clock';
 
-export const AnalogClock = () => {
-    const [date, setDate] = useState(new Date());
-
-    useEffect(() => {
-        const intervalID = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => {
-            clearInterval(intervalID);
-        };
-    }, []);
+export const AnalogClock: React.FC<ClockViewPropsType> = ({date}) => {
 
     const hour = date.getHours();
     const minute = date.getMinutes();
